@@ -1,0 +1,25 @@
+<form method = "POST">
+    {% csrf_token %}
+    {% comment %} {{products}} {% endcomment %}
+
+    <table border="4" cellspacing="0" cellpadding="15">
+        <tr>
+            <td>Title</td>
+            <td>Price</td>
+            <td>Category</td>
+            <td>Description</td>
+            <td>Published At</td>
+        </tr>
+
+        {% for pro in products %}
+        <tr>
+            <td>{{pro.title}}</td>
+            <td>{{pro.price}}</td>
+            <td>{{pro.category}}</td>
+            <td>{{pro.description}}</td>
+            <td>{{pro.updated_at}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+

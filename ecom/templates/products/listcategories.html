@@ -1,0 +1,16 @@
+<form method = "POST">
+    {% csrf_token %}
+
+    <table border="4" cellspacing="0" cellpadding="15">
+        <tr>
+            <td>Name</td>
+        </tr>
+
+        {% for category in categories %}
+        <tr>
+            <td>{{category.name}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+
